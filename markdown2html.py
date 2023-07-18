@@ -1,31 +1,5 @@
 
 
-"""
-markdown2html.py
-
-Converts a Markdown file to HTML, supporting various syntax elements.
-
-Usage: ./markdown2html.py <input_file> <output_file>
-
-Supported Syntax:
-- Headings: Syntax: # Heading level 1
-- Unordered List: Syntax: - List item
-- Ordered List: Syntax: * List item
-- Paragraph: Plain text
-
-Custom Syntax:
-- **Bold**: Renders as <b>Bold</b>
-- __Emphasis__: Renders as <em>Emphasis</em>
-- [[Text]]: Renders as MD5 hash of the text (lowercase)
-- ((Text)): Removes all occurrences of the letter 'c' (case insensitive) from the text
-
-Requirements:
-- Ubuntu 18.04 LTS
-- Python 3 (version 3.7 or higher)
-- PEP 8 style (version 1.7.*)
-- Executable files
-"""
-
 # import sys
 # import os.path
 # import hashlib
@@ -104,11 +78,11 @@ Requirements:
 #     sys.exit(0)
 
 
-#!/usr/bin/python3
+
 """
 A script that converts Markdown to HTML.
 """
-
+#!/usr/bin/python3
 import sys
 import os
 import re
