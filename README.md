@@ -1,4 +1,4 @@
-A new Project; Markdown to HTML
+Markdown to HTML
 REQUIREMENTS
 All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7 or higher)
 The first line of all your files should be exactly #!/usr/bin/python3
