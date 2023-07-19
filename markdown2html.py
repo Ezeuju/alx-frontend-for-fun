@@ -1,88 +1,8 @@
-
-
-# import sys
-# import os.path
-# import hashlib
-
-# if __name__ == "__main__":
-#     if len(sys.argv) < 3:
-#         sys.stderr.write("Usage: ./markdown2html.py <input_file> <output_file>\n")
-#         sys.exit(1)
-
-#     input_file = sys.argv[1]
-#     output_file = sys.argv[2]
-
-#     if not os.path.isfile(input_file):
-#         sys.stderr.write("Missing " + input_file + "\n")
-#         sys.exit(1)
-
-#     with open(input_file, 'r') as file:
-#         lines = file.readlines()
-
-#     output_lines = []
-#     inside_list = False
-#     inside_paragraph = False
-#     for line in lines:
-#         line = line.rstrip('\n')
-#         if line.startswith("#"):
-#             if inside_paragraph:
-#                 output_lines.append("</p>")
-#                 inside_paragraph = False
-#             heading_level = min(line.count("#"), 6)  # Limit heading level to 6
-#             heading_text = line.strip("# ")
-#             output_lines.append("<h{0}>{1}</h{0}>".format(heading_level, heading_text))
-#         elif line.startswith("-"):
-#             if not inside_list:
-#                 if inside_paragraph:
-#                     output_lines.append("</p>")
-#                     inside_paragraph = False
-#                 output_lines.append("<ul>")
-#                 inside_list = True
-#             line = "<li>" + line.strip("- ") + "</li>"
-#         elif line.strip() == "":
-#             if inside_list:
-#                 output_lines.append("</ul>")
-#                 inside_list = False
-#             if inside_paragraph:
-#                 output_lines.append("</p>")
-#                 inside_paragraph = False
-#         else:
-#             if not inside_paragraph:
-#                 if inside_list:
-#                     output_lines.append("</ul>")
-#                     inside_list = False
-#                 output_lines.append("<p>")
-#                 inside_paragraph = True
-
-#             # Custom syntax replacements
-#             line = line.replace("**", "<b>").replace("__", "<em>")
-#             line = line.replace("**", "</b>").replace("__", "</em>")
-#             line = line.replace("[[", "").replace("]]", "")
-#             line = line.replace("((", "").replace("))", "").replace("c", "").replace("C", "")
-#             line = line.strip()
-
-#             # Check if the line is private
-#             if "private" in line.lower():
-#                 line = hashlib.md5(line.encode()).hexdigest().lower()
-
-#             output_lines.append(line)
-
-#     if inside_list:
-#         output_lines.append("</ul>")
-#     if inside_paragraph:
-#         output_lines.append("</p>")
-
-#     with open(output_file, 'w') as file:
-#         file.write("\n".join(output_lines))
-
-#     sys.exit(0)
-
-
-
+#!/usr/bin/python3
 """
 A script that converts Markdown to HTML.
 """
-#!/usr/bin/python3
+
 import sys
 import os
 import re
@@ -96,7 +16,7 @@ def convert_markdown_to_html(input_file, output_file):
         print(f"Missing {input_file}", file=sys.stderr)
         sys.exit(1)
 
-    # Read the Markdown file and convert it to HTML
+    # Read the Markdown file and convertt it to HTML
     with open(input_file, encoding="utf-8") as f:
         html_lines = []
         for line in f:
@@ -123,9 +43,9 @@ if __name__ == "__main__":
     input_file = sys.argv[1]
     output_file = sys.argv[2]
 
-    # Convert the Markdown file to HTML and write the output to a file
+    # Convert the Markdown file to the HTML and write the output to a file
     convert_markdown_to_html(input_file, output_file)
 
-    # Exit with a successful status code
+    # Exit  with a successful status code
     sys.exit(0)
 
